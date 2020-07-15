@@ -1,12 +1,12 @@
 import CSVToJSON from "csvtojson";
-import JSONToCSV2 from "json2csv";
-const JSONToCSV = JSONToCSV2.parse;
+import JSONToCSV0 from "json2csv";
+const JSONToCSV = JSONToCSV0.parse;
 import { getAChuckNorrisJoke } from "../api/Chuck_Norris_API.js";
 import fs from "fs";
-// require("dotenv").config();
-import "dotenv/config.js"
+import "dotenv/config.js";
 var newLine = "\r\n";
 
+//recursive function to fill the data.csv file with 100 jokes
 export const addNewJokes = async (nrOfJokes = 20) => {
   try {
     const allJokes = await CSVToJSON().fromFile(process.env.FILE_PATH);
@@ -24,7 +24,7 @@ export const addNewJokes = async (nrOfJokes = 20) => {
     console.log(err);
   }
 };
-
+// helping function to add new unique joke to the list in data.csv
 const appendOneJoke = async (joke) => {
   try {
     const cleanJoke = {
@@ -38,11 +38,3 @@ const appendOneJoke = async (joke) => {
     console.log(err);
   }
 };
-// CSVToJSON().fromFile("./source.csv")
-// .then((source) => {
-//   console.log(source);
-//   source1 = {
-//     id: "abc",
-//     url: "dce",
-//     joke: "hahaha",
-//   };

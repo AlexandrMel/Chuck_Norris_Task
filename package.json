@@ -5,8 +5,8 @@
   "description": "",
   "main": "app.mjs",
   "scripts": {
-    "webpack": "webpack --config webpack.config.cjs",
-    "start": "node src/app.js",
+    "build": "webpack --config webpack.config.cjs",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

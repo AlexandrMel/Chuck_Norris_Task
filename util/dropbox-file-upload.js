@@ -2,6 +2,7 @@ import db from "dropbox-stream";
 import path from "path";
 import fs from "fs";
 
+// Upload file to dropbox using dropbox-stream package
 export const uploadToDropbox = async (token, filename) => {
   const up = await db
     .createDropboxUploadStream({
