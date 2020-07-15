@@ -15,10 +15,9 @@ export const addNewJokes = async (nrOfJokes = 20) => {
     } else {
       const newJoke = await getAChuckNorrisJoke();
       if (allJokes.filter((el) => el.id === newJoke.id).length === 0) {
-        appendOneJoke(newJoke);
-        console.log();
+        await appendOneJoke(newJoke);
       }
-      return this.addNewJokes(nrOfJokes);
+      return addNewJokes(nrOfJokes);
     }
   } catch (err) {
     console.log(err);
@@ -37,4 +36,5 @@ const appendOneJoke = async (joke) => {
   } catch (err) {
     console.log(err);
   }
+  return joke;
 };

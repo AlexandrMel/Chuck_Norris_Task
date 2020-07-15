@@ -19,7 +19,7 @@ const RequestAndSaveJokes = async () => {
         });
       }
 // Once we have a data.csv with the right fields, populate the file with 100 jokes
-const LoadedAllJokes = await addNewJokes(10);
+const LoadedAllJokes = await addNewJokes(100);
 if (LoadedAllJokes) {
   
 // Once we have a data.csv with 100 jokes, upload the file to Dropbox
