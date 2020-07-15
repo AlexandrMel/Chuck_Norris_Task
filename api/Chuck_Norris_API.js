@@ -1,6 +1,6 @@
-const axios = require("../axios/axios");
+import axios from "../axios/axios.js";
 
-exports.getJoke = async () => {
+export const getAChuckNorrisJoke = async () => {
   const Joke = await axios.get("/jokes/random");
   console.log(Joke.data);
   return Joke.data;

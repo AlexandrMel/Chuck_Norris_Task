@@ -1,9 +1,9 @@
-const db = require("dropbox-stream");
-const path = require("path");
-const fs = require("fs");
+import db from "dropbox-stream";
+import path from "path";
+import fs from "fs";
 
-exports.uploadToDropbox = (token, filename) => {
-  const up = db
+export const uploadToDropbox = async (token, filename) => {
+  const up = await db
     .createDropboxUploadStream({
       token: token,
       path: "/test/" + path.basename(filename),
@@ -15,7 +15,8 @@ exports.uploadToDropbox = (token, filename) => {
     .on("progress", (res) => console.log(res))
     .on("metadata", (metadata) => console.log("Metadata", metadata));
 
-  fs.createReadStream(filename)
+  await fs
+    .createReadStream(filename)
     .pipe(up)
     .on("finish", () => console.log("This fires before metadata!"));
 };

@@ -1,30 +1,34 @@
-const fs = require("fs");
-const { addNewJokes } = require("./util/checkJoke");
-const { uploadToDropbox } = require("./dropbox-file-upload");
+import fs from "fs";
+import { addNewJokes } from "./util/addNewJokes.js";
+import { uploadToDropbox } from "./util/dropbox-file-upload.js";
+// require("dotenv").config();
+import "dotenv/config.js";
 const newLine = "\r\n";
 
-const newFunction = async () => {
-  fs.stat("./data/source1.csv", async function (err, stat) {
-    if (err !== null) {
-      console.log("New file, just writing headers");
-      var fields = ["ID", "CHUCK NORRIS JOKE"] + newLine;
-      fs.writeFile("./data/source1.csv", fields, function (err) {
-        if (err) throw err;
-        console.log("file saved");
-      });
-    }
-    const jokesss = await addNewJokes(20);
-    console.log(jokesss);
-
-    if (jokesss) {
-      await uploadToDropbox(
-        "LNM_pT7edhIAAAAAAAAC8bwst9NETlDEkDPDVqCZ31u1rre4Sv2J_hikxEBz9-6U",
-        "./data/source1.csv"
-      );
-    }
-  });
+const RequestAndSaveJokes = async () => {
+  try {
+    fs.stat(process.env.FILE_PATH, async function (err, stat) {
+      if (err !== null) {
+        console.log("New file, just writing headers");
+        var fields = ["ID", "CHUCK_NORRIS_JOKES"] + newLine;
+        fs.writeFile(process.env.FILE_PATH, fields, function (err) {
+          if (err) throw err;
+          console.log("file saved");
+        });
+      }
+      const LoadedAllJokes = await addNewJokes(10);
+      if (LoadedAllJokes) {
+        const finalFileUploaded = await uploadToDropbox(
+          process.env.DROPBOX_TOKEN,
+          process.env.FILE_PATH
+        );
+      }
+    });
+  } catch (err) {
+    console.log(err);
+  }
 };
-newFunction();
+RequestAndSaveJokes();
 
 // const { Parser } = require("json2csv");
 // // const json2csv = require('json2csv').parse
