@@ -1,4 +1,5 @@
 # Chuck_Norris_Task
+![alt text](https://img.memecdn.com/there-are-no-chuck-norris-jokes-there-are-no-bruce-lee-jokes-there-are-only-facts_o_1226219.jpg)
 
 # Small chance that beauty will actually save the world, but Chuck Norris jokes most definitely will!!! :)
 
@@ -53,7 +54,7 @@ After installing node, this project will need yarn too, so just run the followin
 ## Install
 
     $ git clone https://github.com/AlexandrMel/Chuck_Norris_Task
-    $ cd PROJECT_TITLE
+    $ cd Chuck_Norris_Task
     $ npm install
 
 ## Configure app

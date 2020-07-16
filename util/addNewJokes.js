@@ -7,7 +7,7 @@ import "dotenv/config.js";
 var newLine = "\r\n";
 
 //recursive function to fill the data.csv file with 100 jokes
-export const addNewJokes = async (nrOfJokes = 20) => {
+export const addNewJokes = async (nrOfJokes = 100) => {
   try {
     const allJokes = await CSVToJSON().fromFile(process.env.FILE_PATH);
     if (allJokes.length > nrOfJokes - 1) {

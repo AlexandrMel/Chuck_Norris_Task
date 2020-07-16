@@ -14,7 +14,7 @@ const RequestAndSaveJokes = async () => {
       console.log("file saved");
     });
     // fill the data.csv file with 100 new unique chuck norris jokes
-    const LoadedAllJokes = await addNewJokes(20);
+    const LoadedAllJokes = await addNewJokes(100);
     if (LoadedAllJokes) {
       // Once we have a data.csv with 100 jokes, upload the file to Dropbox
       await uploadToDropbox(process.env.DROPBOX_TOKEN, process.env.FILE_PATH);
