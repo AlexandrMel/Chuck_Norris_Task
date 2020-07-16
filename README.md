@@ -52,7 +52,7 @@ After installing node, this project will need yarn too, so just run the followin
 
 ## Install
 
-    $ git clone https://github.com/YOUR_USERNAME/PROJECT_TITLE
+    $ git clone https://github.com/AlexandrMel/Chuck_Norris_Task
     $ cd PROJECT_TITLE
     $ npm install
 
@@ -73,4 +73,4 @@ Create an .env file in the root folder of the project and fill it with data as i
 
 ## Simple build for production
 
-    $ npm build
+    $ npm run build
