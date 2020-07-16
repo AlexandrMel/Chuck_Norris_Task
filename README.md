@@ -1,6 +1,4 @@
 # Chuck_Norris_Task
-![alt text](https://img.memecdn.com/there-are-no-chuck-norris-jokes-there-are-no-bruce-lee-jokes-there-are-only-facts_o_1226219.jpg)
-
 # Small chance that beauty will actually save the world, but Chuck Norris jokes most definitely will!!! :)
 
 A small project that generates 100 unique Chuck Norris jokes from https://api.chucknorris.io" and saves the data in a csv file,
@@ -75,6 +73,6 @@ Create an .env file in the root folder of the project and fill it with data as i
 ## Simple build for production
 
     $ npm run build
-## Important Note
+# Important Note
 
     ES Modules would not work in a older Node versions, so if it does not work please update node or change import/export syntax

@@ -33,8 +33,8 @@ export const appendOneJoke = async (joke) => {
   try {
     const csv = (await JSONToCSV(cleanJoke, { header: false })) + newLine;
     fs.appendFileSync(process.env.FILE_PATH, csv);
+    return cleanJoke;
   } catch (err) {
     console.log(err);
   }
-  return cleanJoke;
 };

@@ -7,9 +7,6 @@ import fs from "fs";
 
 describe("Add jokes functions", () => {
   beforeAll(async () => {
-    await fs.truncate(process.env.FILE_PATH, 0, function () {
-      console.log("cleaned csv file");
-    });
     var fields = ["id", "CHUCK_NORRIS_JOKES"] + newLine;
     await fs.writeFile(process.env.FILE_PATH, fields, function (err) {
       if (err) throw err;
