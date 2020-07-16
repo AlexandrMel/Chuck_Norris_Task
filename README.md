@@ -75,3 +75,6 @@ Create an .env file in the root folder of the project and fill it with data as i
 ## Simple build for production
 
     $ npm run build
+## Important Note
+
+    ES Modules would not work in a older Node versions, so if it does not work please update node or change import/export syntax
