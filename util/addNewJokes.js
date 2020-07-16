@@ -24,17 +24,17 @@ export const addNewJokes = async (nrOfJokes = 20) => {
   }
 };
 // helping function to add new unique joke to the list in data.csv
-const appendOneJoke = async (joke) => {
+export const appendOneJoke = async (joke) => {
+  let cleanJoke = {
+    id: joke.id,
+    joke: joke.value,
+  };
+  console.log(cleanJoke);
   try {
-    const cleanJoke = {
-      id: joke.id,
-      joke: joke.value,
-    };
-    console.log(cleanJoke);
     const csv = (await JSONToCSV(cleanJoke, { header: false })) + newLine;
     fs.appendFileSync(process.env.FILE_PATH, csv);
   } catch (err) {
     console.log(err);
   }
-  return joke;
+  return cleanJoke;
 };
