@@ -29,7 +29,7 @@ export const appendOneJoke = async (joke) => {
     id: joke.id,
     joke: joke.value,
   };
-  console.log(cleanJoke);
+  // console.log(cleanJoke);
   try {
     const csv = (await JSONToCSV(cleanJoke, { header: false })) + newLine;
     fs.appendFileSync(process.env.FILE_PATH, csv);

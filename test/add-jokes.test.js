@@ -1,7 +1,7 @@
 import { appendOneJoke, addNewJokes } from "../util/addNewJokes.js";
 import CSVToJSON from "csvtojson";
 import "dotenv/config.js";
-process.env.FILE_PATH = "./test/data.csv";
+process.env.FILE_PATH = "./test/test-data/data.csv";
 var newLine = "\r\n";
 import fs from "fs";
 
